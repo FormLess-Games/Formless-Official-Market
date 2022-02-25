@@ -6,18 +6,15 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
-
 import "../ERC721/ERC721Enumerable.sol";
 import "../interfaces/INFTFactory.sol";
 import "../lib/InitializableOwnable.sol";
 
 
 contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable {
-    using SafeERC20 for IERC20;
     using SafeMath for uint256;
+    using SafeERC20 for IERC20;
     using Strings for uint256;
-    using Address for address;
 
     address public factory;
     string public baseURI;

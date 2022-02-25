@@ -1,21 +1,15 @@
-// SPDX-License-Identifier: MIT  
 pragma solidity 0.8.4;
 
-
-import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "../lib/InitializableOwnable.sol";
 import "../interfaces/INFTFactory.sol";
 import "../ERC1155/ERC1155.sol";
 import "../interfaces/INFTFactory.sol";
 
 contract InitializableERC1155 is InitializableOwnable, ERC1155 {
-    using SafeERC20 for IERC20;
-    using SafeMath for uint256;
     using Strings for uint256;
-    using Address for address;
+    using SafeERC20 for IERC20;
     
     mapping (uint256 => string) private _tokenURIs;
     string internal _baseUri = "";

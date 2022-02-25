@@ -1,0 +1,57 @@
+{
+  "deployed": {
+    "development-fork": {
+      "Migrations": "0xEba85304439c77C74Fb471D302fba836ab3248b4",
+      "InitializableERC721": "0x00BE7896b27567a6b5B75070a01051206daCD386",
+      "InitializableERC1155": "0xE48c6ba9cFCe97f4d0EC146C40E601c0Eed59b7E",
+      "BlindBox": "0xF2EC587db2932013dd8ee6eDa85d9e6f50448dce",
+      "CloneFactory": "0xe72634e6928A0629156AF14765258AC938668B30"
+    },
+    " development-fork": {
+      "NFTFactory": "0x9C06d23E0C10520741239BD388b85494f39656c6"
+    },
+    "development": {
+      "Migrations": "0x2e7c556021e0a2EAaaF8b3C2b93D66aDD7Cc877e",
+      "InitializableERC721": "0xdEA7F17E29E4F1fC9040e58713502Aa7CE8D1871",
+      "InitializableERC1155": "0xc7eA96a690Cdf3a3E60d54b8258e1919fBfd61bd",
+      "BlindBox": "0xe3D93C9C6C80663E1fBf2dc02e007E8557Ffc3DA",
+      "CloneFactory": "0x94b3d6207a1E361a68bCe448A4CBD9b82b4EcBdA",
+      "BlindBoxV2": "0x5C320691994d1b649e502AC56a274864c51542ff"
+    },
+    " development": {
+      "NFTFactory": "0x549747Fc8d826D90d36FB41a1B26eb0C16b5C568"
+    },
+    "rinkeby-fork": {
+      "Migrations": "0x3B758e9a39e6fb9fD63Ef9911e3b4DfA7f71B463",
+      "InitializableERC721": "0x705abB93C0e4Cad032748f446eD94bd1971CcB09",
+      "InitializableERC1155": "0x5372354D303F925eF5cF22843DDbD41dA7188298",
+      "BlindBox": "0x5374D4ba413eCE2eAe8e2167e0AA9773C17329C7",
+      "CloneFactory": "0xE24d938BA0601390b0FFaF9503e9Deda4B8B84aE",
+      "BlindBoxV2": "0xF43aaC01007302189b36DCE2878e7271CBdf2f1d"
+    },
+    " rinkeby-fork": {
+      "NFTFactory": "0x43C28EA5719474339bb346508E87C8e7f157A2C1"
+    },
+    "rinkeby": {
+      "Migrations": "0x3B758e9a39e6fb9fD63Ef9911e3b4DfA7f71B463",
+      "InitializableERC721": "0x705abB93C0e4Cad032748f446eD94bd1971CcB09",
+      "InitializableERC1155": "0x5372354D303F925eF5cF22843DDbD41dA7188298",
+      "BlindBox": "0x5374D4ba413eCE2eAe8e2167e0AA9773C17329C7",
+      "CloneFactory": "0xE24d938BA0601390b0FFaF9503e9Deda4B8B84aE",
+      "BlindBoxV2": "0xF43aaC01007302189b36DCE2878e7271CBdf2f1d"
+    },
+    " rinkeby": {
+      "NFTFactory": "0x43C28EA5719474339bb346508E87C8e7f157A2C1"
+    },
+    "polygon": {
+      "Migrations": "0x3B758e9a39e6fb9fD63Ef9911e3b4DfA7f71B463",
+      "InitializableERC721": "0x94905733ac7156F8Ca49Db2d92f226047bD79bf9",
+      "InitializableERC1155": "0xd6034De2311C46666eFcBC840f282660179BD481",
+      "BlindBox": "0x4Fb9de69A8eCFfB8e1F4C9974B82E8fa3F7C7357",
+      "CloneFactory": "0x2630C6AE57c491354a2f0FeE1861F952D92137Ec"
+    },
+    " polygon": {
+      "NFTFactory": "0xd6034De2311C46666eFcBC840f282660179BD481"
+    }
+  }
+}

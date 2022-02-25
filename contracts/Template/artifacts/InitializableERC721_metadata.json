@@ -850,7 +850,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Template/InitializableERC721.sol": "InitializableERC721"
+			"Template/InitializableERC721.sol": "InitializableERC721"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -858,7 +858,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -984,7 +984,7 @@
 				"dweb:/ipfs/QmfYuZxRfx2J2xdk4EXN7jKg4bUYEMTaYk9BAw9Bqn4o2Y"
 			]
 		},
-		"contracts/ERC721/ERC721.sol": {
+		"ERC721/ERC721.sol": {
 			"keccak256": "0xeaeefa8fb933df951e71308b76a70b88c6fb5c6b50746e0646613a161487991e",
 			"license": "MIT",
 			"urls": [
@@ -992,7 +992,7 @@
 				"dweb:/ipfs/QmPPAd5JFHyUGc7TVVxx9WJL86PC2dM7aH981Jeve3Jvdh"
 			]
 		},
-		"contracts/ERC721/ERC721Enumerable.sol": {
+		"ERC721/ERC721Enumerable.sol": {
 			"keccak256": "0x1e63a73db457c48dbee9fba013df601ce473dba43cad06a733b0a66c27729719",
 			"license": "MIT",
 			"urls": [
@@ -1000,15 +1000,15 @@
 				"dweb:/ipfs/QmR94GTFh9p9z9SkFysiTYUDdWxBKHAi2fPg7tY7M5WMZe"
 			]
 		},
-		"contracts/Template/InitializableERC721.sol": {
-			"keccak256": "0xd686fe1b9d64009d60824763eb21578dbffc20c7240281af51012e4f1eb76dbc",
+		"Template/InitializableERC721.sol": {
+			"keccak256": "0xd44cf0542e24a8443d9d454c956cbd46bf6ce73a0572fde2f129838df7c37906",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8c7a81573652b0d1ddac9066e6197414ed2eaa50f81a3a251c46dbf90f14f736",
-				"dweb:/ipfs/QmURZ1GHaptqKqS3fmBA9BQrv3YesbpHwUjfsHq1GwNpAV"
+				"bzz-raw://e6a596388cbff54141ceed014802bef3467d16dfd409ec8bccb8dd616820f75e",
+				"dweb:/ipfs/QmUAS7KcZyek9R5s1G7crLgLdH94ZQXUPK9fc9qxGZPZ2h"
 			]
 		},
-		"contracts/interfaces/INFTFactory.sol": {
+		"interfaces/INFTFactory.sol": {
 			"keccak256": "0x0c36407a4e14c240d3fb58e3854e07654f9b7785cd3bf732a6729c2d52051c93",
 			"license": "MIT",
 			"urls": [
@@ -1016,7 +1016,7 @@
 				"dweb:/ipfs/QmVMPy1QERf9Yrxcte4TsxX1FkZ1FBpd5DnniSqPuAUPXJ"
 			]
 		},
-		"contracts/lib/InitializableOwnable.sol": {
+		"lib/InitializableOwnable.sol": {
 			"keccak256": "0x4e022eaf0d58e85cc3deb44681b09299a624c123fbd72a463de05658dfb6b13a",
 			"license": "MIT",
 			"urls": [

@@ -983,7 +983,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Template/BlindBox.sol": "BlindBox"
+			"Template/BlindBox.sol": "BlindBox"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -991,7 +991,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -1117,7 +1117,7 @@
 				"dweb:/ipfs/QmTqU65L6iu6yqmXKzcNLPioR8etzKPWycpDJCm17ifVdS"
 			]
 		},
-		"contracts/ERC721/ERC721.sol": {
+		"ERC721/ERC721.sol": {
 			"keccak256": "0xeaeefa8fb933df951e71308b76a70b88c6fb5c6b50746e0646613a161487991e",
 			"license": "MIT",
 			"urls": [
@@ -1125,7 +1125,7 @@
 				"dweb:/ipfs/QmPPAd5JFHyUGc7TVVxx9WJL86PC2dM7aH981Jeve3Jvdh"
 			]
 		},
-		"contracts/ERC721/ERC721Enumerable.sol": {
+		"ERC721/ERC721Enumerable.sol": {
 			"keccak256": "0x1e63a73db457c48dbee9fba013df601ce473dba43cad06a733b0a66c27729719",
 			"license": "MIT",
 			"urls": [
@@ -1133,15 +1133,15 @@
 				"dweb:/ipfs/QmR94GTFh9p9z9SkFysiTYUDdWxBKHAi2fPg7tY7M5WMZe"
 			]
 		},
-		"contracts/Template/BlindBox.sol": {
-			"keccak256": "0xddba2d0a06f705be2df8726b5617709b13554e815cb9fea611bad3b4257d721b",
+		"Template/BlindBox.sol": {
+			"keccak256": "0xa31bde7577d7c664bc19445b90c019dcac31a89fde0baabc327232f79767d0ef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0af313007a3beb6137aaef194e0f15733186d06188b0add7cb8970fc01dcfc6e",
-				"dweb:/ipfs/QmWTpgzHfgvsHLbVPegnvLX3XN2RfZ4aTSrM2JyXTdYE5X"
+				"bzz-raw://2403dfb6f68e8369606844e19aa4677a5b4f6f832b0c3f1beeba49fc6cf48b33",
+				"dweb:/ipfs/QmVKJJXc88TJP9paf2vf5k1JcxVbSCVbpp9ScSfkfTdr2M"
 			]
 		},
-		"contracts/interfaces/INFTFactory.sol": {
+		"interfaces/INFTFactory.sol": {
 			"keccak256": "0x0c36407a4e14c240d3fb58e3854e07654f9b7785cd3bf732a6729c2d52051c93",
 			"license": "MIT",
 			"urls": [
@@ -1149,7 +1149,7 @@
 				"dweb:/ipfs/QmVMPy1QERf9Yrxcte4TsxX1FkZ1FBpd5DnniSqPuAUPXJ"
 			]
 		},
-		"contracts/lib/InitializableOwnable.sol": {
+		"lib/InitializableOwnable.sol": {
 			"keccak256": "0x4e022eaf0d58e85cc3deb44681b09299a624c123fbd72a463de05658dfb6b13a",
 			"license": "MIT",
 			"urls": [
