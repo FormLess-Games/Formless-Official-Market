@@ -83,15 +83,15 @@ contract NFTFactory is Ownable, SignerRole{
         address _admin,
         uint256 _startTime,
         uint256 _endTime,
-        address _saleToken,
         address _treasury,
         uint256 _maxSupply,
+        address[] memory _saleToken,
         string memory _name,
         string memory _symbol,
         string memory _baseURI
     ) external returns (address newERC721) {
         newERC721 = ICloneFactory(CLONE_FACTORY).clone(ERC721_TEMPLATE);
-        InitializableERC721(newERC721).initialize(_admin, _startTime,_endTime, _saleToken, _treasury,_maxSupply, _name, _symbol, _baseURI);
+        InitializableERC721(newERC721).initialize(_admin, _startTime,_endTime, _treasury,_maxSupply, _saleToken, _name, _symbol, _baseURI);
         USER_ERC721_REGISTRY[msg.sender].push(newERC721);
         emit NewERC721(newERC721, msg.sender);
     }
@@ -116,17 +116,21 @@ contract NFTFactory is Ownable, SignerRole{
     }
 
     function createBlindBoxV2(
-        address[3] memory _addressConfigs,
-        uint256[4] memory _saleSettings,
-        uint256[] memory _perSupplys,
+        address[] memory _addressConfigs,
+        uint256[] memory _saleSettings,
+        uint256[] memory _per721Supplys,
+        uint256[] memory _per1155Supplys,
         address[] memory _erc20Tokens,
         uint256[] memory _tokensSupply,
+        uint256[] memory _serverIds,
+        string memory _name,
+        string memory _symbol,
         string memory _boxURI,
         string memory _baseURI
     ) external returns (address newBlindBox) {
         newBlindBox = ICloneFactory(CLONE_FACTORY).clone(COMPLATE_BLINDBOX);
         BlindBoxV2(newBlindBox).initialize(
-            _addressConfigs, _saleSettings, _perSupplys, _erc20Tokens, _tokensSupply, _boxURI, _baseURI
+            _addressConfigs, _saleSettings, _per721Supplys, _per1155Supplys, _erc20Tokens, _tokensSupply, _serverIds, _name, _symbol, _boxURI, _baseURI
         );
         USER_BLINDBOX_V2_REGISTRY[msg.sender].push(newBlindBox);
         emit NewBlindBoxV2(newBlindBox, msg.sender);

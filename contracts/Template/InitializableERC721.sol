@@ -18,7 +18,7 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
 
     address public factory;
     string public baseURI;
-    uint256 public nextTokenId;
+    // uint256 public nextTokenId;
     uint256 public maxSupply;
 
     struct SaleConfig {
@@ -29,6 +29,7 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
     }
 
     SaleConfig public saleConfig;
+    mapping (address=>bool) saleTokens;
 
     event Mint(address minter, uint price, uint256 tokenId);
     event SaleConfigChanged(uint256 startTime, uint256 endTime, address saleToken, address treasury);
@@ -42,9 +43,9 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
         address _admin,
         uint256 _startTime,
         uint256 _endTime,
-        address _saleToken,
         address _treasury,
         uint256 _maxSupply,
+        address[] memory _saleToken,
         string memory name,
         string memory symbol,
         string memory _baseURI
@@ -55,9 +56,13 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
         saleConfig = SaleConfig({
             startTime: _startTime,
             endTime: _endTime,
-            saleToken: _saleToken,
+            saleToken: address(0),
             treasury: _treasury
         });
+
+        for (uint256 i = 0; i < _saleToken.length; i++) {
+            saleTokens[_saleToken[i]] = true;
+        }
         _name = name;
         _symbol = symbol;
         baseURI = _baseURI;
@@ -84,7 +89,7 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
         emit SaleConfigChanged(_startTime, _endTime, _saleToken, _treasury);
     }
 
-    function mint(uint256 tokenId, uint256 price, uint8 v, bytes32 r, bytes32 s) external payable onlyEOA {
+    function mint(uint256 tokenId, uint256 price, address token, uint8 v, bytes32 r, bytes32 s) external payable onlyEOA {
         // Make sure sale config has been set up
         SaleConfig memory _saleConfig = saleConfig;
         require(_saleConfig.startTime > 0, "ERC721: sale not configured");
@@ -93,17 +98,18 @@ contract InitializableERC721 is ERC721Enumerable, InitializableOwnable, Pausable
         require(block.timestamp <= _saleConfig.endTime, "ERC721: sale already end");
 
         // check signature
-        bytes32 messageHash = keccak256(abi.encodePacked(this, _msgSender(), tokenId, price));
+        bytes32 messageHash = keccak256(abi.encodePacked(this, _msgSender(), tokenId, price, token));
         require(INFTFactory(factory).verifySignedMessage(messageHash, v, r, s), "ERC721: signer should sign buyer address and tokenId");
 
+        require(saleTokens[token], "ERC721: Not Support");
         require(tokenId + 1 <= maxSupply, "ERC721: invalid tokenId");
 
-        if (_saleConfig.saleToken == address(0)) {
+        if (token == address(0)) {
             require(price == msg.value, "ERC721: incorrect Ether value");
             // The contract never holds any Ether. Everything gets redirected to treasury directly.
             payable(_saleConfig.treasury).transfer(msg.value);
         }else{
-            IERC20(_saleConfig.saleToken).safeTransferFrom(_msgSender(), _saleConfig.treasury, price);
+            IERC20(token).safeTransferFrom(_msgSender(), _saleConfig.treasury, price);
         }
 
         _safeMint(_msgSender(), tokenId);

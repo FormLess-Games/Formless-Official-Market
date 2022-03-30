@@ -12,7 +12,7 @@ contract InitializableERC1155 is InitializableOwnable, ERC1155 {
     using SafeERC20 for IERC20;
     
     mapping (uint256 => string) private _tokenURIs;
-    string internal _baseUri = "";
+    string constant internal _baseUri = "";
 
     address public factory;
 
